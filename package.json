@@ -13,12 +13,10 @@
   "author": "Houssem yahiaoui",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.2",
     "busboy-body-parser": "^0.2.0",
     "express": "^4.14.0",
     "gridfs-stream": "^1.1.1",
     "mongoose": "^4.6.8",
     "morgan": "^1.7.0",
-    "multer": "^1.2.0"
   }
 }
