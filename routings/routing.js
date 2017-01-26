@@ -18,30 +18,29 @@ conn.once("open", () => {
     router.get('/img/:imgname', (req, res) => {
         gfs.files.find({
             filename: req.params.imgname
-        }).toArray(function(err, files) {
+        }).toArray((err, files) => {
 
             if (files.length === 0) {
                 return res.status(400).send({
                     message: 'File not found'
                 });
             }
-            console.log(files);
             let data = [];
             let readstream = gfs.createReadStream({
                 filename: files[0].filename
             });
 
-            readstream.on('data', function(chunk) {
+            readstream.on('data', (chunk) => {
                 data.push(chunk);
             });
 
-            readstream.on('end', function() {
+            readstream.on('end', () => {
                 data = Buffer.concat(data);
                 let img = 'data:image/png;base64,' + Buffer(data).toString('base64');
                 res.end(img);
             });
 
-            readstream.on('error', function(err) {
+            readstream.on('error', (err) => {
                 console.log('An error occurred!', err);
                 throw err;
             });
@@ -55,7 +54,7 @@ conn.once("open", () => {
             content_type: part.mimetype
         });
 
-        writeStream.on('close', function(file) {
+        writeStream.on('close', (file) => {
             return res.status(200).send({
                 message: 'Success',
                 file: file
