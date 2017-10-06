@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/houssem-yahiaoui/mongdb-gridfs-demo.git"
   },
+  "scripts": {
+    "start": "node app.js"
+  },
   "author": "Houssem Yahiaoui <houssem.yahiaoui.ai@gmail.com>",
   "license": "MIT",
   "dependencies": {

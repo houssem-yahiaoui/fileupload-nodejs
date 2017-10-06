@@ -3,7 +3,7 @@
 const router = require('express').Router();
 const config = require('../config/config');
 const mongoose = require("mongoose");
-const fs = require("fs");
+const fs = require('fs');
 
 let Grid = require("gridfs-stream");
 let conn = mongoose.connection;
@@ -16,12 +16,13 @@ conn.once("open", () => {
       res.send('Hello Housem !');
     });
     router.get('/img/:imgname', (req, res) => {
+      let imgname = req.params.imgname;
         gfs.files.find({
-            filename: req.params.imgname
+            filename: imgname
         }).toArray((err, files) => {
 
             if (files.length === 0) {
-                return res.status(400).send({
+                return res.status(404).send({
                     message: 'File not found'
                 });
             }
@@ -41,8 +42,11 @@ conn.once("open", () => {
             });
 
             readstream.on('error', (err) => {
+              // if theres an error, respond with a status of 500
+              // responds should be sent, otherwise the users will be kept waiting
+              // until Connection Time out
+                res.status(500).send(err);
                 console.log('An error occurred!', err);
-                throw err;
             });
         });
     });
@@ -55,17 +59,22 @@ conn.once("open", () => {
         });
 
         writeStream.on('close', (file) => {
+          // checking for file
+          if(!file) {
+            res.status(400).send('No file received');
+          }
             return res.status(200).send({
                 message: 'Success',
                 file: file
             });
         });
-
-        writeStream.write(part.data);
-
-        writeStream.end();
+        // using callbacks is important !
+        // writeStream should end the operation once all data is written to the DB 
+        writeStream.write(part.data, () => {
+          writeStream.end();
+        });  
     });
-})
+});
 
 
 module.exports = router;
