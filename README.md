@@ -17,6 +17,14 @@ or, in case your don't dispose yarn, please use the following command:
 # npm install
 ```
 
+## Launching the app:
+
+In case you want to run the app, simply use the following command : 
+
+```
+# npm start
+```
+
 Finaly, for even more details please check this Youtube tutorial i've created that explain's just that.
 
 Link : https://youtu.be/pXHOF4GWuZQ
