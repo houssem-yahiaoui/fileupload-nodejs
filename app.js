@@ -3,10 +3,10 @@
 const app = require('express')(),
       config = require('./config/config');
 
-//Express conf !
+// Express conf !
 require('./config/express.config')(app);
 
-//Mongoose Conf !
+// Mongoose Conf !
 require('./config/mongoose.config')(config);
 
 app.listen(config.dev.port, () => {
