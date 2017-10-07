@@ -29,6 +29,10 @@ Finaly, for even more details please check this Youtube tutorial i've created th
 
 Link : https://youtu.be/pXHOF4GWuZQ
 
+## Collaborators :
+ - Houssem Yahiaoui (@houssem-yahiaoui).
+ - Ali Sawari (@AliSawari)
+
 Happy Coding =D
 
 [![forthebadge](http://forthebadge.com/badges/built-with-love.svg)](https://github.com/houssem-yahiaoui/)
