@@ -12,8 +12,13 @@ module.exports = (app) => {
         next();
     });
     app.use(busboyBodyParser({ limit: '10mb' }));  
+    // removing x-powered-by header for some security issues
+    app.use((req, res, next) => {
+      res.removeHeader('x-powered-by');
+      next();
+    });
 
     //[*]Routes Configuration
-    let main = require('../routings/routing.js');
-    app.use('/api', main);
+    let api = require('../routings/routing.js');
+    app.use('/api', api);
 };

@@ -61,7 +61,7 @@ conn.once("open", () => {
         writeStream.on('close', (file) => {
           // checking for file
           if(!file) {
-            res.status(400).send('No file received');
+            return res.status(400).send('No file received');
           }
             return res.status(200).send({
                 message: 'Success',
