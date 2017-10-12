@@ -2,3 +2,4 @@ node_modules/
 .gitignore
 package-lock.json
 yarn.lock
+public/bundle.js
