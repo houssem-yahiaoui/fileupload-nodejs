@@ -9,11 +9,11 @@ module.exports = (config) => {
     
     // using new syntax for mongoose library
     // check the mongoose doc for more info
-    mongoose.connect(dbURI, {
-    	useMongoClient: true,
-    }).then(() => {
-      console.log(`Connected to ${dbURI}`);
-    }).catch((e) => {
-      throw e;
-    });
+    mongoose.connect(dbURI)
+      .then(() => {
+          console.log(`[*] Connected to Database`);
+      })
+      .catch(err => {
+          console.log(`[*] Error while connecting to DB, with error: ${err}`)
+      });
 };
