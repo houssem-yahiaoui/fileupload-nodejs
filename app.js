@@ -1,14 +1,13 @@
-'use strict';
-
-const app = require('express')(),
-      config = require('./config/config');
+const app = require('express')();
+const config = require('./config/config');
+const logger = require('./config/logger.config');
 
 // Express conf !
 require('./config/express.config')(app);
 
 // Mongoose Conf !
-require('./config/mongoose.config')(config);
+require('./config/mongoose.config')(config, logger);
 
-app.listen(config.dev.port, () => {
-  console.log("Listening ..");
+app.listen(config.port, () => {
+  logger.info(`[*] Listening on port ${config.port} ..`);
 });

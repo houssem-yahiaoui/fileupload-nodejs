@@ -1,9 +1,8 @@
-"use strict";
+// Logic
+const logger           = require('morgan');
+const busboyBodyParser = require('busboy-body-parser');
 
-const logger           = require('morgan'),
-      busboyBodyParser = require('busboy-body-parser');
-
-module.exports = (app) => {
+module.exports = app => {
     app.use(logger('dev'));
     app.use((req, res, next) => {
         res.header('Access-Control-Allow-Origin', '*');
@@ -11,9 +10,9 @@ module.exports = (app) => {
         res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
         next();
     });
-    app.use(busboyBodyParser({ limit: '10mb' }));  
+    app.use(busboyBodyParser({ limit: '50mb' }));  
 
-    //[*]Routes Configuration
-    let main = require('../routings/routing.js');
-    app.use('/api', main);
+    //[*] V1 Routes Configuration.
+    let viRoutes = require('../routings/v1/');
+    app.use('/v1', viRoutes);
 };

@@ -1,7 +1,7 @@
 {
-  "name": "gridfs-demo",
-  "version": "0.1.0",
-  "description": "Simple demo that show how we can upload filesin mongoDB gridFS system",
+  "name": "fileuploader-node-mongodbdemo",
+  "version": "1.0.0",
+  "description": "NodeJS file uploader using mongoDB gridFS system",
   "main": "app.js",
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
     "express": "^4.14.0",
     "gridfs-stream": "^1.1.1",
     "mongoose": "^4.6.8",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "winston": "^2.4.0",
+    "file-type": "^4.3.0"
   }
 }
