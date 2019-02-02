@@ -62,19 +62,16 @@ I've changed the **download** endpoints so no in order to download your document
 ```
 
 ### **Change Log** : 
-1. Added a Logger using Winston Logger.
-2. Added a Revamp for the API links.
-3. Added an Api to check the uploaded files.
-4. Changed the way we upload and download files.
-5. Download files will be in a file base way and not in base64.
+1. **V1** all supported functionalities.
+2. Full re-write in **Typescript**.
+3. Code Quality : **Prettier** and **Husky** and **Lint-staged** for formating and re-commiting code quality.
 
 
-Finally, for even more details please check this Youtube tutorial i've created that explain's just that.
+Finally, for even more details please check this Youtube tutorial I've created that explain's just that.
 
 Link : https://youtu.be/pXHOF4GWuZQ
 
 ## Collaborators :
  - Houssem Yahiaoui (@houssem-yahiaoui).
- - Ali Sawari (@AliSawari)
 
 **Happy Coding =D**

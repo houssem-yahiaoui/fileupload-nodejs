@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import { Schema, model }  from 'mongoose';
 
-const fileSchema = new mongoose.Schema({
+const fileSchema = new Schema({
     doc_id: {
         type: String
     },
@@ -15,4 +15,5 @@ const fileSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('File', fileSchema);
+const FileModel = model('File', fileSchema);
+export default FileModel;
