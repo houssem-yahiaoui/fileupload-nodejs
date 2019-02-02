@@ -1,13 +1,16 @@
 # MongoDB/GridFS File upload with NodeJS.
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+[![TypeScript](https://badges.frapsoft.com/typescript/awesome/typescript.png?v=101)](https://github.com/ellerbrock/typescript-badges/)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 
 As mouthfull as it sounds, but functional it will be, file upload is needed in any application
 there for this demo shows how we can upload files directly to our MongoDB using it's GridFS System.
 
-## Dependencies Management :
+## Dependencies Management :P
 
-In order to use this repo, please feel free to clone directly to your working directory and simply enter this command to your Terminal/CMD :
+In order to use this repository, please feel free to clone directly to your working directory and simply enter this command to your Terminal/CMD :
 
 ```
 # yarn install
@@ -64,10 +67,10 @@ I've changed the **download** endpoints so no in order to download your document
 ### **Change Log** : 
 1. **V1** all supported functionalities.
 2. Full re-write in **Typescript**.
-3. Code Quality : **Prettier** and **Husky** and **Lint-staged** for formating and re-commiting code quality.
+3. Code Quality : **Prettier** and **Husky** and **Lint-staged** for formating and re-committing code quality.
 
 
-Finally, for even more details please check this Youtube tutorial I've created that explain's just that.
+Finally, for even more details please check this Youtube tutorial I've created that explains just that.
 
 Link : https://youtu.be/pXHOF4GWuZQ
 
