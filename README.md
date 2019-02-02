@@ -25,8 +25,10 @@ or, in case your don't dispose yarn, please use the following command:
 In case you want to run the app, simply use the following command :
 
 ```
-# npm start
+# yarn dev
 ```
+
+This will use the [**ts-node**](https://github.com/TypeStrong/ts-node) package so make sure that you've it locally ;) 
 
 ## **Updates**:
 ### **File Upload** : 
