@@ -12,7 +12,7 @@
     "dev": "ts-node app.ts",
     "start": "nodemon ./dist/app.js",
     "prod": "npm run build && npm run start",
-    "format": "prettier-standard '**/*.js'"
+    "format": "prettier-standard '**/*.ts'"
   },
   "lint-staged": {
     "linters": {
