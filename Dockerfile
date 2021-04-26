@@ -20,7 +20,7 @@ COPY ["package.json", "./"]
 ENV NODE_ENV staging
 
 #Metadata
-LABEL version="0.4.2"
+LABEL version="1.5.0-d"
 LABEL description="Typical file uploader to MongoDB GridFS."
 LABEL maintainer "houssem.yahiaoui.ai@gmail.com"
 
