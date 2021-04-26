@@ -33,6 +33,7 @@ module.exports = router => {
                     })
                 })
                 .catch(err => {
+                    // TODO : improve logging with slack msgs.
                     logger.error(`[*] Error, while getting all uploaded file, with error:  ${err}`);
                     res.status(400).send({
                         message: `Error, while getting all uploaded file, with error: ${err}`
@@ -70,6 +71,7 @@ module.exports = router => {
                     res.end(data);
                 });
                 readstream.on('error', (err) => {
+                    // TODO : improve logging with slack msgs.
                     logger.error(`[*] Error, while downloading a file, with error:  ${err}`);
                     res.status(400).send({
                         message: `Error, while downloading a file, with error:  ${err}`

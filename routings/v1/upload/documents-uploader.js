@@ -1,10 +1,8 @@
 // Config
-const config = require('../../../config/config');
 const logger = require('../../../config/logger.config');
 
 // Logic
 const mongoose = require("mongoose");
-const fs = require('fs');
 const Grid = require('gridfs-stream');
 
 //models
@@ -34,11 +32,13 @@ module.exports = router => {
                         name: uploadedFile.filename,
                         type: uploadedFile.contentType
                     })
-                    .then(file => res.json({
+                    .then(_ => res.json({
                         success: true,
                         message: "File was saved with success"
                     }))
                     .catch(err => {
+                        console.log(err);
+                        // TODO : improve logging with slack messages
                         logger.error(`[*] Error, while uploading new files, with error: ${err}`);
                         res.status(500).json({
                             message: `[*] Error while uploading new files, with error: ${err}`

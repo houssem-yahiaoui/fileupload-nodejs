@@ -9,6 +9,10 @@
 As mouthfull as it sounds, but functional it will be, file upload is needed in any application
 there for this demo shows how we can upload files directly to our MongoDB using it's GridFS System.
 
+## NOTICE: ##
+This project will be improved in near future to use the new supported version of file management
+in MongoDB, which is the GridFSBucket, this final support will be ported soon.
+
 ## Dependencies Management :
 
 In order to use this repository, please feel free to clone directly to your working directory and simply enter this command to your Terminal/CMD :
@@ -30,22 +34,21 @@ In case you want to run the app, simply use the following command :
 ```
 
 ## **Updates**:
-### **File Upload** : 
+### **File Upload** :
 I've changed the **upload** endpoints so no in order to upload your documents you will just call for the endpoint bellow :
 
 ```
 <localhost|server>/v1/bucket/upload
 ```
 
-### **Checking Uplaoded files** : 
+### **Checking Uplaoded files** :
 As an added endpoint, now you can view all your uploaded files using this endpoint:
 
 ```
 <localhost|server>/v1/home
 ```
 
-This endpoint will give you all uploaded docs within you Database in an array of object that will have the 
-following:
+This endpoint will give you all uploaded docs within you Database in an array of object that will have the following:
 ```
     [{
         file_name: <uploaded-file-name>,
@@ -56,22 +59,18 @@ following:
 
 1. **file_name** : The uploaded file name.
 2. **file_id** : An auto generated _if upon file upload over GridFS.
-3. **file_link** : An auto generated download link of your file for easy download. 
+3. **file_link** : An auto generated download link of your file for easy download.
 
-### **File Download** : 
+### **File Download** :
 I've changed the **download** endpoints so no in order to download your documents you will just call for the endpoint bellow :
 
 ```
 <localhost|server>/v1/bucket/download?document_id=<doc-id>
 ```
 
-### **Change Log** : 
-1. Added a Logger using Winston Logger.
-2. Added a Revamp for the API links.
-3. Added an Api to check the uploaded files.
-4. Changed the way we upload and download files.
-5. Download files will be in a file base way and not in base64.
-6. Added some Linting and Formating for sake of code Quality.
+### **Change Log** :
+1 - Depedencies upgrade.
+2 - Logger updates to match winston v3.3
 
 
 Finally, for even more details please check this Youtube tutorial I've created that explains just that.
