@@ -9,5 +9,5 @@ require('./config/express.config')(app);
 require('./config/mongoose.config')(config, logger);
 
 app.listen(config.port, () => {
-  logger.info(`[*] Listening on port ${config.port} ..`);
+  logger.info(`[*] 🚀 Listening on port : ${config.port} ..`);
 });
